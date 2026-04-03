@@ -1,0 +1,7 @@
+# Hivemind ignores
+
+# OS
+.DS_Store
+
+# GSD local state (if GSD is ever run in this repo)
+.gsd/
