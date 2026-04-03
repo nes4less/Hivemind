@@ -26,25 +26,27 @@ Mobile app for Token Remote. Communications hub for managing GSD agents — mess
 
 ## Recent Progress
 
-- **Render Protocol implemented** — 7-step resolution chain (ViewGroup → View → Style → Platform Output)
-- **Model-driven MessageCenter** — tabs, styles, interactions defined as TokenBase model records
-- **Generic renderers** — CardRenderer, RowRenderer, ViewRenderer, ViewGroupRenderer
-- **OTA live** — Build 22 on TestFlight, OTA b1b86359
+- **Render Protocol** — 7-step resolution chain (ViewGroup → View → Style → Platform Output)
+- **Model-driven MessageCenter** — tabs, styles, interactions all defined as TokenBase model records
+- **Thread model** — first-class threads table, app + daemon create/update Thread records, realtime
+- **FunctionExecutor** — central gesture handler registry, eliminates copy-paste handlers
+- **Generic renderers** — CardRenderer, RowRenderer, ThreadRow, TaskCard, ViewRenderer, ViewGroupRenderer
+- **Full loop verified** — message → thread → task → daemon → reply → thread update → realtime
+- **OTA live** — Build 22, latest OTA ab2f8559
 
 ## Known Issues
 
 - iOS password autofill (Associated Domains not configured)
 - Comments tab using notifications data (placeholder)
 - SDK 54/Xcode 26 upgrade needed before April 28
-- Thread replies not appearing live (needs Thread model)
 
 ## Next Steps
 
-1. Extract Thread as first-class entity (fix reply chain)
-2. Test full app → daemon → reply loop with Thread model
-3. Wire Interaction model to gesture handlers (eliminate copy-paste)
-4. Build GSD dashboard — visual list of GSD instances with status
+1. Extract ComposeModal as model-driven component (Prompt model)
+2. ViewState persistence (scroll, expanded, filters → AsyncStorage)
+3. Wire Comments tab to real data
+4. SDK 54/Xcode 26 upgrade
 
 ## Status
 
-🟢 Active development — Render Protocol landed, model-driven tabs working.
+🟢 Active development — all render protocol steps complete, model-driven UI working.
