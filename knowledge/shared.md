@@ -23,6 +23,7 @@ Single Supabase instance (`ximnhbkjjfsfalylluwf`) serves the entire Token Remote
 1. **One GSD per project repo at a time.** Don't run two GSD sessions in the same project directory — markdown artifact writes aren't transactional across sessions.
 2. **Hivemind is read-by-all, write-by-active.** Any GSD session should read all project files on startup. Only update the file for the project you're actively working on.
 3. **Machine files are self-reported.** Each machine updates its own file. Don't guess another machine's state.
+4. **Every commit gets a tag and description.** Use a short tag prefix for the area of change (e.g. `fix:`, `feat:`, `refactor:`, `ui:`, `daemon:`, `auth:`, `ota:`, `model:`). Follow with a clear description of what changed and why. No bare "update" or "changes" commits. The commit message is the changelog — make it useful to a future agent landing cold.
 
 ## Lessons Learned
 
