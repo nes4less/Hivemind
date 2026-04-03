@@ -24,18 +24,27 @@ Mobile app for Token Remote. Communications hub for managing GSD agents — mess
 - AI provider auth integrations (Claude, Gemini, ChatGPT)
 - Profile editor, View-driven dashboard sections
 
+## Recent Progress
+
+- **Render Protocol implemented** — 7-step resolution chain (ViewGroup → View → Style → Platform Output)
+- **Model-driven MessageCenter** — tabs, styles, interactions defined as TokenBase model records
+- **Generic renderers** — CardRenderer, RowRenderer, ViewRenderer, ViewGroupRenderer
+- **OTA live** — Build 22 on TestFlight, OTA b1b86359
+
 ## Known Issues
 
-- `useAuth` hook still expects `data.token` — needs update for `{ accessToken, refreshToken }` response
-- Xcode bundle ID still has `com.anonymous.TokenSports-Utility` — needs prebuild to sync
+- iOS password autofill (Associated Domains not configured)
+- Comments tab using notifications data (placeholder)
+- SDK 54/Xcode 26 upgrade needed before April 28
+- Thread replies not appearing live (needs Thread model)
 
 ## Next Steps
 
-1. Update useAuth for new token pair response
-2. Build GSD dashboard — visual list of GSD instances with status
-3. Set up EAS for TestFlight builds
-4. Add human users
+1. Extract Thread as first-class entity (fix reply chain)
+2. Test full app → daemon → reply loop with Thread model
+3. Wire Interaction model to gesture handlers (eliminate copy-paste)
+4. Build GSD dashboard — visual list of GSD instances with status
 
 ## Status
 
-🟡 Functional but needs auth hook update and TestFlight build.
+🟢 Active development — Render Protocol landed, model-driven tabs working.
